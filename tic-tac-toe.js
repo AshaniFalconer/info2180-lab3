@@ -1,39 +1,39 @@
-document.addEventListener("DOMContentLoaded,
-function()
-{
-   let squares = document.querySelectorAll("#aboard div");
-
-   squares.forEach(function(square)
+document.addEventListener("DOMContentLoaded"
+,  function()
    {
-     square.classList.add("square");
-   });
+      let squares = document.querySelectorAll("#board div");
+
+      squares.forEach(function(square)
+      {
+         square.classList.add("square");
+      });
 
 
-   let currentPlayer = "X";
+      let currentPlayer = "X";
 
-   squares.forEach(function(square)
-   {
-     square.addEventListener("click",
-     function()
-    {
-       if(square.textContent !== "")
-       {
-          return;
-       }
+      squares.forEach(function(square)
+      {
+         square.addEventListener("click",
+           function()
+           {
+              if(square.textContent !== "")
+              {
+                 return;
+              }
 
-       square.textContent = currentPlayer;
-       square.classList.add(currentPlayer);
+              square.textContent = currentPlayer;
+              square.classList.add(currentPlayer);
 
-       if(currentPlayer === "X")
-       {
-          currentPlayer = "O";
-       }
-       else
-       {
-          currentPlayer = "X";
-       }
-     });
+              if(currentPlayer === "X")
+              {
+                 currentPlayer = "O";
+              }
+              else
+              {
+                 currentPlayer = "X";
+              }
+          });
+
+       });
 
     });
-
-});
