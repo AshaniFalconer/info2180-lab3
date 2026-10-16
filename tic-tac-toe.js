@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded"
 
       let status = document.getElementById("status");
 
+      let newGameButton = document.querySelector(".btn");
+
       function checkWinner(player)
       {
          const winningCombos =
@@ -93,4 +95,26 @@ document.addEventListener("DOMContentLoaded"
 
        });
 
-    });
+      newGameButton.addEventListener("click",
+        function()
+        {
+           board = ["", "", "", "", "", "", "", "", ""];
+
+           currentPlayer = "X";
+
+           squares.forEach(function(square)
+           {
+              square.textContent = "";
+
+              square.classList.remove("X");
+              square.classList.remove("O");
+           });
+
+           status.textContent = "Move your mouse over a square and click to play an X or an O.";
+
+           status.classList.remove("you-won");
+
+        });
+
+
+     });
